@@ -1,0 +1,153 @@
+// * {
+//     border: 1px solid red;
+// }
+
+/* FONT IMPORT */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap'); 
+$comfortaa: Comfortaa, sans-serif;
+
+/* COLOR PALETTE */
+$dark-blue: #568DE9;
+$aquamarine: #84CEEB;
+$purple: #8860D0;
+$lavender: #C1C8E4;
+$bright-blue: #5AB9EA;
+$light-gray: #f3f3f3ff;
+
+body {
+    font-family: $comfortaa;
+    font-weight: normal;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 4em;
+}
+
+h2 {
+    font-size: 3em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+/*=========================*/
+/* HEADER COMPONENT STYLING
+/*=========================*/
+header {
+    width: 100%;
+    min-height: 1vh;
+    background-color: $dark-blue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        width: 45%;
+        img {
+            width: 60%;
+            height: 40%;
+        }
+        h1 {
+        color: $light-gray;
+        }
+    }   
+    nav {
+        width: 45%;
+        height: 100%;
+        .header_menu {
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            .user_account_login_modal {
+                
+            }
+            .user_panel {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                min-width: 50%;
+                div {
+                    border-bottom: 5px solid black;
+                    width: 25%;
+                }
+            }
+            .open_sidebar_nav {
+                visibility: hidden;
+            }
+        }
+    }
+}
+
+/*=========================*/
+/* HOME COMPONENT STYLING
+/*=========================*/
+
+.page-wrapper {
+    .home-intro {
+        background-color: $dark-blue;
+        padding-top: 3%;
+        height: 80vh;
+        .home-intro-container {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            background-image: url('../images/bracket.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+
+            .one {
+                width: 25%;
+            }
+            #home-intro-content {
+                width: 50%;
+                height: 40vh;
+                display: flex;
+                flex-direction: column;
+                color: $light-gray;
+                padding-top: 43%;
+                a {
+                    color: $light-gray;
+                }
+            }
+            .two {
+                width: 25%;
+            }
+        }
+    }
+    .home-connect-container {
+        padding: 5%;
+        height: 80vh;
+        width: 100%;
+        background-color: $aquamarine;
+        display: flex;
+        flex-direction: column;
+        div {
+            h2 {
+                color: white;
+            }
+        }
+        .chat-icons {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            height: 60vh;
+            #chat-one {
+                width: 50%;
+            }
+            #chat-two {
+                width: 50%;
+                margin-top: 15%;
+            }
+        }
+    }
+
+    .home-tracker-container {
+        
+    }
+}
