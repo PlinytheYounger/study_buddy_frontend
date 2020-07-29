@@ -34,6 +34,10 @@ h3 {
     font-size: 2em;
 }
 
+h4 {
+    font-size: 1.5em;
+}
+
 /*=========================*/
 /* HEADER COMPONENT STYLING
 /*=========================*/
@@ -158,5 +162,80 @@ header {
 /*=========================*/
 
 .signup-form {
-    height: 65vh;
+    color: white;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $dark-blue;
+    .text-inputs {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        input[type="text"], input[type="email"], input[type="password"] {
+            height: 5vh;
+            margin: 5%;
+            font-size: 16px;
+        }
+    }
+    .concept-comprehension {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        select {
+            margin: 5%;
+            font-size: 16px;
+            option {
+                font-size: 16px;
+            }
+        }
+    }
+    input[type="submit"] {
+        background-color: $purple;
+        font-size: 32px;
+    }
 }
+
+/*=========================*/
+/* PROFILE CONTAINER COMPONENT STYLING
+/*=========================*/
+.profile-container {
+    background-color: $dark-blue;
+    height: 100vh;
+    padding-left: 2%;
+    padding-right: 2%;
+    .jump-to {
+        background-color: $aquamarine;
+        text-align: center;
+        height: 5vh;
+        padding-top: 1%;
+        padding-bottom: 1%;
+    }
+    .interview-container {
+        color: white;
+        height: 20vh;
+    }
+    .studyguide-container {
+        color: white;
+        height: 20vh;
+    }
+    .concept-card-container {
+        color: white;
+        height: 20vh;
+    }
+}
+
+
+/*=========================*/
+/* INTERVIEWS COMPONENT STYLING
+/*=========================*/
+
+
+/*=========================*/
+/* STUDY GUIDE COMPONENT STYLING
+/*=========================*/
+
+
+/*=========================*/
+/* CONCEPT COMPONENT STYLING
+/*=========================*/

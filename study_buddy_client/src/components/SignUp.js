@@ -1,20 +1,22 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import '../css/main.css';
 import Header from './Header';
 import Footer from './Footer';
+import {Link} from 'react-router-dom';
 
 function SignUp() {
     return(
         <div className="signup-form-container">
             <Header />
             <form className="signup-form">
-                <h2>Sign up for Study Buddy!</h2>
-                <input type="text" name="name" placeholder="Name"/>
-                <input type="text" name="username" placeholder="Username"/>
-                <input type="email" name="email" placeholder="Email"/>
-                <input type="password" name="password" placeholder="Password"/>
-                
-                <div>
+                <div className="text-inputs">
+                    <h2>Sign up for Study Buddy!</h2>
+                    <input type="text" name="name" placeholder="Name"/>
+                    <input type="text" name="username" placeholder="Username"/>
+                    <input type="email" name="email" placeholder="Email"/>
+                    <input type="password" name="password" placeholder="Password"/>
+                </div>
+                <div className="concept-comprehension">
                     <h3>Concept Comprehension</h3>
                     <label>Big O Notation</label>
                     <select>
@@ -51,6 +53,9 @@ function SignUp() {
                 </div>
                 <input type="submit" value="Sign up!"/>
             </form>
+            <div>
+                <h3>Already have an account? <Link to="/login">Login.</Link></h3>
+            </div>
             <Footer />
         </div>
     )

@@ -16,6 +16,9 @@ h2 {
 h3 {
   font-size: 2em; }
 
+h4 {
+  font-size: 1.5em; }
+
 /*=========================*/
 /* HEADER COMPONENT STYLING
 /*=========================*/
@@ -105,6 +108,65 @@ header {
 /* SIGNUP COMPONENT STYLING
 /*=========================*/
 .signup-form {
-  height: 65vh; }
+  color: white;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #568DE9; }
+  .signup-form .text-inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; }
+    .signup-form .text-inputs input[type="text"], .signup-form .text-inputs input[type="email"], .signup-form .text-inputs input[type="password"] {
+      height: 5vh;
+      margin: 5%;
+      font-size: 16px; }
+  .signup-form .concept-comprehension {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; }
+    .signup-form .concept-comprehension select {
+      margin: 5%;
+      font-size: 16px; }
+      .signup-form .concept-comprehension select option {
+        font-size: 16px; }
+  .signup-form input[type="submit"] {
+    background-color: #8860D0;
+    font-size: 32px; }
+
+/*=========================*/
+/* PROFILE CONTAINER COMPONENT STYLING
+/*=========================*/
+.profile-container {
+  background-color: #568DE9;
+  height: 100vh;
+  padding-left: 2%;
+  padding-right: 2%; }
+  .profile-container .jump-to {
+    background-color: #84CEEB;
+    text-align: center;
+    height: 5vh;
+    padding-top: 1%;
+    padding-bottom: 1%; }
+  .profile-container .interview-container {
+    color: white;
+    height: 20vh; }
+  .profile-container .studyguide-container {
+    color: white;
+    height: 20vh; }
+  .profile-container .concept-card-container {
+    color: white;
+    height: 20vh; }
+
+/*=========================*/
+/* INTERVIEWS COMPONENT STYLING
+/*=========================*/
+/*=========================*/
+/* STUDY GUIDE COMPONENT STYLING
+/*=========================*/
+/*=========================*/
+/* CONCEPT COMPONENT STYLING
+/*=========================*/
 
 /*# sourceMappingURL=main.css.map */

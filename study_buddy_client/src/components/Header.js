@@ -1,20 +1,20 @@
 import React from 'react';
 import '../css/main.css';
+import {Link} from 'react-router-dom';
 
 function Header() {
     return(
         <header>
             <div className="logo">
-                <img src={require("../images/S.png")} alt="logo"></img>
+                <Link to="/">
+                    <img src={require("../images/S.png")} alt="logo"></img>
+                </Link>
             </div>
             <nav>
                 <div className="header_menu">
-                    <a href="#" className="user_account_login_modal">
-                        <span className="user_icon">
-                            <svg></svg>
-                            <div className="user_details"></div>
-                        </span>
-                    </a>
+                    <Link to="/login">
+                        <img src={require('../images/chat-one.png')} alt="user profile icon" to="/signup"/>
+                    </Link>
                     <div className="user_panel">
                         <div>
                             <h2></h2>
@@ -26,7 +26,9 @@ function Header() {
                             <h2></h2>   
                         </div>
                     </div>
-                    <a href="#" className="open_sidebar_nav"></a>
+                    {/* <a href="#" className="open_sidebar_nav">
+
+                    </a> */}
                 </div>
             </nav>
         </header>
