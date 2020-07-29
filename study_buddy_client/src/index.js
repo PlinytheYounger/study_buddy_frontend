@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Switch, Route, Router} from 'react-router';
+import {createBrowserHistory} from 'history';
 import App from './App';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
@@ -14,7 +15,7 @@ const routes = [
         name: 'Login-Modal'
     },
     {
-        path: '/profile',
+        path: '/profile/:id',
         component: Profile,
         name: 'Profile-Page'
     },
@@ -31,8 +32,9 @@ const routes = [
 ];
 
 const root = document.getElementById("root");
+const hist = createBrowserHistory();
 
-ReactDOM.render(<Router>
+ReactDOM.render(<Router history={hist}>
     <Switch>
         {
             routes.map((route)=>{
