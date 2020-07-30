@@ -1,15 +1,17 @@
-import React from 'react';
+import React, {Component} from 'react';
 import '../../css/main.css'
 
-function Interviews() {
-    return (
-        <div className="interview-container">
-            <h2>Upcoming Interviews</h2>
-            <div className="interview-list">
-                
+class Interviews extends Component{
+    render() {
+        return (
+            <div className="interview-container">
+                <h2>Upcoming Interviews</h2>
+                <div className="interview-list">
+                    
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
 
 export default Interviews;

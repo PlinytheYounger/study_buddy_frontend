@@ -15,7 +15,7 @@ const routes = [
         name: 'Login-Modal'
     },
     {
-        path: '/profile/:id',
+        path: '/users/:id',
         component: Profile,
         name: 'Profile-Page'
     },
