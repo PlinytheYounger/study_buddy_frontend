@@ -1,37 +1,21 @@
 import React, {Component} from 'react';
 import '../css/main.css';
-import {Link} from 'react-router-dom';
+import {Link, Route} from 'react-router-dom';
+import SignUp from './SignUp';
+import Profile from './userProfile/ProfileContainer';
 
 
-class Home extends Component {
+export default class Home extends Component {
     state = {
-        user: []
+        loggedInStatus: "NOT_LOGGED_IN",
+        user: {}
     }
 
-    handleSignUp = (info) => {
-        fetch('http://localhost:3000/users', {
-            body: JSON.stringify(
-                info
-            ),
-            method: "POST",
-            headers: {
-                'Accept': 'application/json, text/plain, */*',
-                'Content-Type': 'application/json'
-            }
-        }).then(response => {
-            localStorage.setItem("token", response.token)
-            // localStorage.token = response.data.token;
-            this.setState({
-                user: {
-                    isLoggedIn: true,
-                    name: '',
-                    email: '',
-                    password: '',
-                },
-                user: [response, ...this.state.response]
-            })
-        })
+    handleSuccessfulAuth = (data) => {
+        // TODO update parent component
+        this.props.history.push(`/profile/${this.props.user.id}`)
     }
+
     render() {
         return(
             <div className="page-wrapper">
@@ -41,7 +25,7 @@ class Home extends Component {
                         <div id="home-intro-content">
                             <h1>Ace your next technical interview!</h1>
                             <h3>Create customized study guides that fit your schedule.</h3>
-                                <h3><Link to="/signup">Sign up --></Link></h3>
+                            <Link to="/signup"><h3>Sign Up!</h3></Link>
                         </div>
                         <div className="two"></div>
                     </div>
@@ -66,13 +50,24 @@ class Home extends Component {
     
                     </div>
                     <div>
-                        <h2>Track your progress and your interviews all in one easy place.</h2>
+                        <Route 
+                            exact path={"/signup"}
+                            render={props => (
+                                <SignUp {...props} loggedInStatus={this.state.loggedInStatus} handleSuccessfulAuth={this.handleSuccessfulAuth}/>
+                            )}
+                        ></Route>
+                    </div>
+
+                    <div>
+                        <Route 
+                            exact path={"/profile/:id"}
+                            render={props => (
+                                <Profile {...props} loggedInStatus={this.state.loggedInStatus}/>
+                            )}
+                        ></Route>
                     </div>
                 </section>
             </div>
         )
     }
     }
-
-
-export default Home;

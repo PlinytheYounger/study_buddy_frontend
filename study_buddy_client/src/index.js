@@ -10,19 +10,9 @@ import * as serviceWorker from './serviceWorker';
 
 const routes = [
     {
-        path: '/login',
-        component: Login,
-        name: 'Login-Modal'
-    },
-    {
         path: '/users/:id',
         component: Profile,
         name: 'Profile-Page'
-    },
-    {
-        path: '/signup',
-        component: SignUp,
-        name: 'Signup-Page'
     },
     {
         path: '/',

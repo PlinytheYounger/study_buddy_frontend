@@ -3,60 +3,69 @@ import '../css/main.css';
 import Header from './Header';
 import Footer from './Footer';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
 
-class SignUp extends Component {
+export default class SignUp extends Component {
     state = {
-        username: '',
-        email: '',
-        name: '',
-        password: ''
+        username: "",
+        name: "",
+        email: "",
+        password: "",
+        password_confirmation: "",
+        registrationErrors: ""
     }
-    
-    updateEmail = (event) => {
+
+    handleChange = (e) => {
         this.setState({
-            email: event.target.value
+            [e.target.name]: e.target.value
         })
     }
 
-    updatePassword = (event) => {
-        this.setState({
-            password: event.target.value
+    handleSubmit = (e) => {
+        const {
+            email,
+            password,
+            name,
+            password_confirmation,
+            username
+        } = this.state;
+
+        axios.post("http://localhost:3001/registrations", {
+            user: {
+                username: email,
+                name: name,
+                email: email,
+                password: password,
+                password_confirmation: password_confirmation
+            }
+        }).then(response => {
+            if (response.data.status === 'created') {
+                this.props.handleSuccessfulAuth(response.data);
+            }
+        }).catch(error => {
+            console.log("registration error", error);
         })
+        e.preventDefault();
+        
     }
 
-    updateName = (event) => {
-        this.setState({
-            name: event.target.value
-        })
-    }
-
-    updateUsername = (event) => {
-        this.setState({
-            username: event.target.value
-        })
-    }
-
-    SignUp = (event) => {
-        event.preventDefault();
-        this.props.handleSignup(this.state);
-        this.setState({
-            username: '',
-            email: '',
-            name: '',
-            password: ''
-        })
-    }
     render() {
         return(
             <div className="signup-form-container">
                 <Header />
-                <form className="signup-form">
+                <h1>Status: {this.props.loggedInStatus}</h1>
+                <form onSubmit={this.handleSubmit} className="signup-form">
                     <div className="text-inputs">
                         <h2>Sign up for Study Buddy!</h2>
-                        <input type="text" name="name" id="name" value={this.state.name} onChange={this.updateName} placeholder="Name"/>
-                        <input type="text" name="username" id="username" value={this.state.username} onChange={this.updateUsername} placeholder="Username"/>
-                        <input type="email" name="email" id="email" value={this.state.email} onChange={this.updateEmail} placeholder="Email"/>
-                        <input type="password" name="password" id="password" value={this.state.password} onChange={this.updatePassword} placeholder="Password"/>
+                        <input type="text" name="name" value={this.state.name} placeholder="Name" onChange={this.handleChange} required/>
+
+                        <input type="text" name="username" value={this.state.username} placeholder="Username" onChange={this.handleChange} required/>
+
+                        <input type="email" name="email" value={this.state.email} placeholder="Email" onChange={this.handleChange} required/>
+
+                        <input type="password" name="password" value={this.state.password} placeholder="Password" onChange={this.handleChange} required/>
+
+                        <input type="password" name="password_confirmation" value={this.state.password_confirmation} placeholder="Password confirmation" onChange={this.handleChange} required/>
                     </div>
                     {/* <div className="concept-comprehension">
                         <h3>Concept Comprehension</h3>
@@ -93,7 +102,7 @@ class SignUp extends Component {
                             <option value="100">Very comfortable</option>
                         </select>
                     </div> */}
-                    <input type="submit" onClick={this.handleSignup} value="Sign up!"/>
+                    <button type="submit">Register!</button>
                 </form>
                 <div>
                     <h3>Already have an account? <Link to="/login">Login.</Link></h3>
@@ -103,5 +112,3 @@ class SignUp extends Component {
         )
     }
 }
-
-export default SignUp;

@@ -4,32 +4,8 @@ import Header from './Header';
 import Footer from './Footer';
 import {Link} from 'react-router-dom';
 
-class Login extends Component {
-    state = {
-        email: '',
-        password: ''
-    }
-    
-    updateEmail = (event) => {
-        this.setState({
-            email: event.target.value
-        })
-    }
+export default class Login extends Component {
 
-    updatePassword = (event) => {
-        this.setState({
-            password: event.target.value
-        })
-    }
-
-    logIn = (event) => {
-        event.preventDefault();
-        this.props.handleLogIn(this.state);
-        this.setState({
-            email: '',
-            password: ''
-        })
-    }
     render() {
         return(
             <div className="login-container">
@@ -50,5 +26,3 @@ class Login extends Component {
         )
     }
 }
-
-export default Login;
