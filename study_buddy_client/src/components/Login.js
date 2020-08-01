@@ -1,27 +1,59 @@
 import React, {Component} from 'react';
 import '../css/main.css';
-import Header from './Header';
-import Footer from './Footer';
-import {Link} from 'react-router-dom';
+import axios from 'axios';
 
 export default class Login extends Component {
+    state = {
+        username: "",
+        name: "",
+        email: "",
+        password: "",
+        loginErrors: ""
+    }
 
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
+    handleSubmit = (e) => {
+        const {
+            password,
+            username
+        } = this.state;
+
+        axios.post("http://localhost:3001/sessions", {
+            user: {
+                username: username,
+                password: password
+            }
+        }).then(response => {
+            console.log(response)
+            if (response.data.logged_in) {
+                this.props.handleSuccessfulAuth(response.data);
+            }
+        }).catch(error => {
+            console.log("login error", error);
+        })
+        e.preventDefault();
+        
+    }
     render() {
         return(
             <div className="login-container">
-                <Header />
                 <div className="login-form-container">
-                    <form>
-                        <h2>Login</h2>
-                        <input type="username" name="username" id="username" placeholder="username"/>
-                        <input type="password" name="password" id="password" placeholder="Password"/>
-                        <input type="submit" id="submit" name="submit"/>
-                    </form>
-                    <div>
-                    <h3>Don't have an account? <Link to="/signup">Sign up now!</Link></h3>
+                <form onSubmit={this.handleSubmit} className="signup-form">
+                    <div className="text-inputs">
+                        <h2>Login to your account!</h2>
+
+                        <input type="text" name="username" value={this.state.username} placeholder="Username" onChange={this.handleChange} required/>
+
+                        <input type="password" name="password" value={this.state.password} placeholder="Password" onChange={this.handleChange} required/>
+                    </div>
+                    <button type="submit">Login!</button>
+                </form>
                 </div>
-                </div>
-                <Footer />
             </div>
         )
     }

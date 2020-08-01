@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import '../css/main.css';
-import Header from './Header';
-import Footer from './Footer';
-import {Link} from 'react-router-dom';
+// import Header from './Header';
+// import Footer from './Footer';
 import axios from 'axios';
 
 export default class SignUp extends Component {
@@ -22,6 +21,7 @@ export default class SignUp extends Component {
     }
 
     handleSubmit = (e) => {
+        console.log(this.props)
         const {
             email,
             password,
@@ -30,9 +30,9 @@ export default class SignUp extends Component {
             username
         } = this.state;
 
-        axios.post("http://localhost:3001/registrations", {
+        axios.post("http://localhost:3001/users", {
             user: {
-                username: email,
+                username: username,
                 name: name,
                 email: email,
                 password: password,
@@ -52,8 +52,6 @@ export default class SignUp extends Component {
     render() {
         return(
             <div className="signup-form-container">
-                <Header />
-                <h1>Status: {this.props.loggedInStatus}</h1>
                 <form onSubmit={this.handleSubmit} className="signup-form">
                     <div className="text-inputs">
                         <h2>Sign up for Study Buddy!</h2>
@@ -105,9 +103,8 @@ export default class SignUp extends Component {
                     <button type="submit">Register!</button>
                 </form>
                 <div>
-                    <h3>Already have an account? <Link to="/login">Login.</Link></h3>
+                    <h3>Already have an account? Login.</h3>
                 </div>
-                <Footer />
             </div>
         )
     }

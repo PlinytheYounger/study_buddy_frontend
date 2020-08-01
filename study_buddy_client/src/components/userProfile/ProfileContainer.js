@@ -9,10 +9,12 @@ import ConceptCards from './ConceptCards';
 class Profile extends Component {
 
     render() {
+        const {user, loggedInStatus} = this.props;
+        console.log(user.interviews);
         return(
             <div className="profile-container">
                 <Header />
-                <h2>Welcome, {this.props.loggedInStatus}</h2>
+                <h2>Welcome, {user.name}</h2>
                 <div className="jump-to">
                     <h4>Jump to: Upcoming Interviews / Study Guide / Concept Comprehension</h4>
                 </div>
