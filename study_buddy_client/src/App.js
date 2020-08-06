@@ -16,7 +16,7 @@ export default class App extends Component {
       if (response.data.logged_in && this.state.loggedInStatus === "NOT_LOGGED_IN") {
         this.setState({
           loggedInStatus: "LOGGED_IN",
-          user: response.data.user
+          user: JSON.parse(response.data.user)
         })
       } else if (!response.data.logged_in && this.state.loggedInStatus === "LOGGED_IN") {
         this.setState({
@@ -44,7 +44,7 @@ export default class App extends Component {
     // going to take in data & update the state to "logged in"
     this.setState({
       loggedInStatus: "LOGGED_IN",
-      user: data.user
+      user: data
     })
   }
 
@@ -60,7 +60,7 @@ export default class App extends Component {
             ></Route>
 
             <Route 
-                exact path={"/profile/:id"}
+                exact path={"/users/:id"}
                 render={props => (
                     <Profile {...props} user={this.state.user} loggedInStatus={this.state.loggedInStatus}/>
                 )}

@@ -29,9 +29,10 @@ export default class Login extends Component {
                 password: password
             }
         }).then(response => {
-            console.log(response)
+            const user = JSON.parse(response.data.user)
+            console.log(user)
             if (response.data.logged_in) {
-                this.props.handleSuccessfulAuth(response.data);
+                this.props.handleSuccessfulAuth(user);
             }
         }).catch(error => {
             console.log("login error", error);

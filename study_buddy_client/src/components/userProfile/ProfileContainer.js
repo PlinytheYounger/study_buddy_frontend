@@ -6,24 +6,28 @@ import Interviews from './Interviews';
 import StudyGuide from './StudyGuide';
 import ConceptCards from './ConceptCards';
 
+
 class Profile extends Component {
 
     render() {
-        const {user, loggedInStatus} = this.props;
-        console.log(user.interviews);
         return(
             <div className="profile-container">
                 <Header />
-                <h2>Welcome, {user.name}</h2>
-                <div className="jump-to">
-                    <h4>Jump to: Upcoming Interviews / Study Guide / Concept Comprehension</h4>
-                </div>
-    
-                <Interviews />
-    
-                <StudyGuide />
-    
-                <ConceptCards />
+                <section className="container-fluid pb-4">
+                    <h2>Welcome, {this.props.user && this.props.user.name}</h2>
+                </section>
+
+                <section className="container-fluid pb-4 pt-4">
+                    <Interviews user={this.props.user}/>
+                </section>
+                
+                {/* <section className="container-fluid pb-4 pt-4">
+                    <StudyGuide />
+                </section> */}
+                
+                <section className="container-fluid pb-4 pt-4">
+                    <ConceptCards user={this.props.user}/>
+                </section>
     
                 <Footer />
             </div>

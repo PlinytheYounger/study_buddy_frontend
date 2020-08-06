@@ -46,7 +46,6 @@ export default class SignUp extends Component {
             console.log("registration error", error);
         })
         e.preventDefault();
-        
     }
 
     render() {
@@ -55,56 +54,18 @@ export default class SignUp extends Component {
                 <form onSubmit={this.handleSubmit} className="signup-form">
                     <div className="text-inputs">
                         <h2>Sign up for Study Buddy!</h2>
-                        <input type="text" name="name" value={this.state.name} placeholder="Name" onChange={this.handleChange} required/>
+                        <input className="form-control" type="text" name="name" value={this.state.name} placeholder="Name" onChange={this.handleChange} required/>
 
-                        <input type="text" name="username" value={this.state.username} placeholder="Username" onChange={this.handleChange} required/>
+                        <input className="form-control" type="text" name="username" value={this.state.username} placeholder="Username" onChange={this.handleChange} required/>
 
-                        <input type="email" name="email" value={this.state.email} placeholder="Email" onChange={this.handleChange} required/>
+                        <input className="form-control" type="email" name="email" value={this.state.email} placeholder="Email" onChange={this.handleChange} required/>
 
-                        <input type="password" name="password" value={this.state.password} placeholder="Password" onChange={this.handleChange} required/>
+                        <input className="form-control" type="password" name="password" value={this.state.password} placeholder="Password" onChange={this.handleChange} required/>
 
-                        <input type="password" name="password_confirmation" value={this.state.password_confirmation} placeholder="Password confirmation" onChange={this.handleChange} required/>
+                        <input className="form-control" type="password" name="password_confirmation" value={this.state.password_confirmation} placeholder="Password confirmation" onChange={this.handleChange} required/>
                     </div>
-                    {/* <div className="concept-comprehension">
-                        <h3>Concept Comprehension</h3>
-                        <label>Big O Notation</label>
-                        <select>
-                            <option value="0">I've heard about this concept...</option>
-                            <option value="25">I've read about this and tried a couple of problems.</option>
-                            <option value="50">I've done some problems, but don't get every one correct</option>
-                            <option value="75">I've done multiple problems, feeling mostly comfortable.</option>
-                            <option value="100">Very comfortable</option>
-                        </select>
-                        <label>Sorting Algorithms</label>
-                        <select>
-                            <option value="0">I've heard about this concept...</option>
-                            <option value="25">I've read about this and tried a couple of problems.</option>
-                            <option value="50">I've done some problems, but don't get every one correct</option>
-                            <option value="75">I've done multiple problems, feeling mostly comfortable.</option>
-                            <option value="100">Very comfortable</option>
-                        </select>
-                        <label>Solving Patterns</label>
-                        <select>
-                            <option value="0">I've heard about this concept...</option>
-                            <option value="25">I've read about this and tried a couple of problems.</option>
-                            <option value="50">I've done some problems, but don't get every one correct</option>
-                            <option value="75">I've done multiple problems, feeling mostly comfortable.</option>
-                            <option value="100">Very comfortable</option>
-                        </select>
-                        <label>Data Structures</label>
-                        <select>
-                            <option value="0">I've heard about this concept...</option>
-                            <option value="25">I've read about this and tried a couple of problems.</option>
-                            <option value="50">I've done some problems, but don't get every one correct</option>
-                            <option value="75">I've done multiple problems, feeling mostly comfortable.</option>
-                            <option value="100">Very comfortable</option>
-                        </select>
-                    </div> */}
                     <button type="submit">Register!</button>
                 </form>
-                <div>
-                    <h3>Already have an account? Login.</h3>
-                </div>
             </div>
         )
     }

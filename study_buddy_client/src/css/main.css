@@ -23,8 +23,6 @@ h4 {
 /* HEADER COMPONENT STYLING
 /*=========================*/
 header {
-  width: 100%;
-  min-height: 1vh;
   background-color: #568DE9;
   display: flex;
   justify-content: space-between;
@@ -37,10 +35,8 @@ header {
     header .logo h1 {
       color: #f3f3f3ff; }
   header nav {
-    width: 45%;
-    height: 100%; }
+    width: 45%; }
     header nav .header_menu {
-      height: 100%;
       display: flex;
       flex-direction: row;
       justify-content: space-around;
@@ -64,7 +60,6 @@ header {
   padding-top: 3%;
   height: 80vh; }
   .page-wrapper .home-intro .home-intro-container {
-    height: 100%;
     width: 100%;
     display: flex;
     background-image: url("../images/bracket.png");
@@ -75,7 +70,6 @@ header {
       width: 25%; }
     .page-wrapper .home-intro .home-intro-container #home-intro-content {
       width: 50%;
-      height: 40vh;
       display: flex;
       flex-direction: column;
       color: #f3f3f3ff;
@@ -87,7 +81,6 @@ header {
 .page-wrapper .home-connect-container {
   padding: 5%;
   height: 80vh;
-  width: 100%;
   background-color: #84CEEB;
   display: flex;
   flex-direction: column; }
@@ -109,7 +102,6 @@ header {
 /*=========================*/
 .signup-form {
   color: white;
-  height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -140,7 +132,6 @@ header {
 /*=========================*/
 .profile-container {
   background-color: #568DE9;
-  height: 100vh;
   padding-left: 2%;
   padding-right: 2%; }
   .profile-container .jump-to {
@@ -150,14 +141,11 @@ header {
     padding-top: 1%;
     padding-bottom: 1%; }
   .profile-container .interview-container {
-    color: white;
-    height: 20vh; }
+    color: white; }
   .profile-container .studyguide-container {
-    color: white;
-    height: 20vh; }
+    color: white; }
   .profile-container .concept-card-container {
-    color: white;
-    height: 20vh; }
+    color: white; }
 
 /*=========================*/
 /* INTERVIEWS COMPONENT STYLING
