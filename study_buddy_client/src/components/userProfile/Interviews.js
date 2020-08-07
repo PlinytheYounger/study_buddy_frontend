@@ -61,7 +61,7 @@ class Interviews extends Component{
         return (
             <div className="container-fluid interview-container pt-4 pb-5">
                 <h2>Upcoming Interviews</h2>
-                <table className="table">
+                <table className="table interview-table">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
