@@ -1,4 +1,5 @@
 # Study Buddy
+## Contributor & Creator: [Whitney Smith](https://www.whitneyleesmith.com/)
 
 ## Table of Contents
 - [Description](https://github.com/PlinytheYounger/study_buddy_frontend/tree/master/study_buddy_client#description)
@@ -60,9 +61,9 @@ In the future, I would like to make a community forum aspect, where you can conn
 | 7/23 | Create base React Components & setup | Complete |
 | 7/23 | Continue work on base React Components & setup | Complete |
 | 7/24 | Seed some data into rails API & integrate back end & front end | Complete |
-| 7/25 | User authentication & Login | In Progress |
-| 7/26 | User authentication & Login | In Progress |
-| 7/27 | User authentication & Login | In Progress |
+| 7/25 | User authentication & Login | Complete |
+| 7/26 | User authentication & Login | Complete |
+| 7/27 | User authentication & Login | Complete |
 | 7/28 | User authentication & Login | Complete |
 | 7/29 | Create Header & Footer Components & import bootstrap; read bootstrap documentation | Complete |
 | 7/30 | Start Bootstrap styling | Complete |
