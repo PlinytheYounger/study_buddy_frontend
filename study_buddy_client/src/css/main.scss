@@ -87,6 +87,25 @@ header {
 /*=========================*/
 /* HOME COMPONENT STYLING
 /*=========================*/
+.home {
+    .home-background {
+        height: 80vh;
+        margin-top: 10%;
+        text-align: center;
+        background-image: url('../images/bracket.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        h2 {
+            padding-top: 20%;
+            color: $light-gray;
+        }
+        h3 {
+            padding-top: 5%;
+            color: $light-gray;
+        }
+    }
+}
 
 .page-wrapper {
     .home-intro {
@@ -213,13 +232,28 @@ header {
 /*=========================*/
 /* INTERVIEWS COMPONENT STYLING
 /*=========================*/
-
+.interview-container {
+    border: 6px solid $purple;
+}
 
 /*=========================*/
 /* STUDY GUIDE COMPONENT STYLING
 /*=========================*/
-
+.studyguide-container {
+    border: 6px solid $purple;
+}
 
 /*=========================*/
 /* CONCEPT COMPONENT STYLING
 /*=========================*/
+.concept-card {
+    border: 6px solid $purple;
+    h2 {
+        color: white;
+        margin-bottom: 5%;
+    }
+    .concept-cards {
+        background-color: $lavender;
+        margin-bottom: 5%;
+    }
+}

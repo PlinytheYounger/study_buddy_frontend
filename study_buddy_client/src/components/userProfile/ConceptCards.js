@@ -6,34 +6,38 @@ class ConceptCards extends Component {
     state = {
         name: "",
         category: "",
+        id: "",
         comprehension: "",
-        user_id: ""
     }
 
-    handleChange = (event) => {
+    handleChange = (event, name, category, id) => {
         event.preventDefault();
         this.setState({
-            [event.target.name]: event.target.value
-        })
+            name: name,
+            category: category,
+            id: id,
+            comprehension: event.target.value,
+            user_id: this.props.user.id
+        });
     }
 
-    handleUpdate = (e) => {
-        e.preventDefault();
+    handleUpdate = (event) => {
+        event.preventDefault();
         const {
-            category,
             name,
-            comprehension
+            category,
+            id,
+            comprehension,
         } = this.state;
 
-        axios.put(`http://localhost:3001/users/${this.props.user.id}/concepts`, {
+        axios.put(`http://localhost:3001/users/${this.props.user.id}/concepts/${id}`, {
             concept: {
                 name: name,
                 category: category,
+                id: id,
                 comprehension: comprehension,
-                user_id: this.props.user.id
             }
         }).then(response => {
-            // JSON.parse
             console.log(response)
         }).catch(error => {
             console.log("registration error", error);
@@ -48,18 +52,16 @@ class ConceptCards extends Component {
                     return (
                         <div className="concept-cards container-fluid pt-4 pb-4">
                             <h3>{concept.name}</h3>
-                            <h3>{concept.comprehension}</h3>
-                            {/* <div className="progress" style={{height: '25%', margin: '5%'}}>
-                                <div className="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style={{width: '25%'}} aria-valuenow={concept.comprehension} aria-valuemin="0" aria-valuemax="100">{`${concept.comprehension}%`}</div>
-                            </div> */}
-                            <button onClick={this.handleClick}>Update Concept Progress</button>
+                            <div className="progress" >
+                                <div className="progress-bar progress-bar-striped progress-bar-animated" style={{width: `${concept.comprehension}%`}} role="progressbar" aria-valuenow={concept.comprehension} aria-valuemin="0" aria-valuemax="100">{`${concept.comprehension}%`}</div>
+                            </div>
                             <div>
-                                <form onSubmit={this.onSubmit}>
-                                    <input type="text" name="comprehension" value={this.state.comprehension} onChange={this.handleChange} placeholder={concept.comprehension} required />
-                                    <input type="text" name="name" value={concept.name} onChange={this.handleChange} />
-                                    <input type="text" name="category" value={concept.category} onChange={this.handleChange} />
-                                    <button type="submit"></button>
-                                </form>
+                            <button className="btn btn-primary mt-5" data-toggle="collapse" href={`#conceptCollapse_${concept.id}`} aria-expanded="false" aria-controls={`#conceptCollapse_${concept.id}`}>Update Concept Progress</button>
+
+                            <form className="collapse" id={`conceptCollapse_${concept.id}`} onSubmit={this.handleUpdate}>
+                                <input type="text" name="comprehension" value={this.state.comprehension} onChange={(e) => this.handleChange(e, concept.name, concept.category, concept.id)} placeholder={concept.comprehension} required />
+                                <button className="btn btn-secondary" type="submit" >Update</button>
+                            </form>
                             </div>
                         </div>
                     )

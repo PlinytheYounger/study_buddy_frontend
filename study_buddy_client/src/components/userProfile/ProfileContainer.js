@@ -21,12 +21,12 @@ class Profile extends Component {
                     <Interviews user={this.props.user}/>
                 </section>
                 
-                {/* <section className="container-fluid pb-4 pt-4">
-                    <StudyGuide />
-                </section> */}
+                <section className="container-fluid pb-4 pt-4">
+                    <StudyGuide user={this.props.user}/>
+                </section>
                 
                 <section className="container-fluid pb-4 pt-4">
-                    <ConceptCards user={this.props.user}/>
+                    <ConceptCards user={this.props.user} handleConceptUpdate={this.props.handleConceptUpdate}/>
                 </section>
     
                 <Footer />

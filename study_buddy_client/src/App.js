@@ -47,6 +47,14 @@ export default class App extends Component {
       user: data
     })
   }
+ 
+  handleNewInterview = () => {
+    console.log('new interview')
+  }
+
+  handleConceptUpdate = (data) => {
+    console.log(data)
+  }
 
   render() {
     return (
@@ -55,14 +63,14 @@ export default class App extends Component {
             <Route 
                 exact path={"/"}
                 render={props => (
-                    <Home {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus}/>
+                    <Home {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.loggedInStatus} />
                 )}
             ></Route>
 
             <Route 
                 exact path={"/users/:id"}
                 render={props => (
-                    <Profile {...props} user={this.state.user} loggedInStatus={this.state.loggedInStatus}/>
+                    <Profile {...props} user={this.state.user} loggedInStatus={this.state.loggedInStatus} handleConceptUpdate={this.handleConceptUpdate}/>
                 )}
             ></Route>
         </Switch>
