@@ -30,7 +30,7 @@ export default class SignUp extends Component {
             username
         } = this.state;
 
-        axios.post("https://studybuddyrailsapi.herokuapp.com/users", {
+        axios.post("http://localhost:3000/users", {
             user: {
                 username: username,
                 name: name,

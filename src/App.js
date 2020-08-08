@@ -12,7 +12,7 @@ export default class App extends Component {
   }
 
   checkLoginStatus() {
-    axios.get("https://studybuddyrailsapi.herokuapp.com/logged_id").then(response => {
+    axios.get("http://localhost:3000/logged_id").then(response => {
       if (response.data.logged_in && this.state.loggedInStatus === "NOT_LOGGED_IN") {
         this.setState({
           loggedInStatus: "LOGGED_IN",

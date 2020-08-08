@@ -23,7 +23,7 @@ export default class Login extends Component {
             username
         } = this.state;
 
-        axios.post("https://studybuddyrailsapi.herokuapp.com/sessions", {
+        axios.post("http://localhost:3000/sessions", {
             user: {
                 username: username,
                 password: password

@@ -25,7 +25,7 @@ class Interviews extends Component{
             interview_type,
         } = this.state;
 
-        axios.post(`http://localhost:3001/users/${this.props.user.id}/interviews`, {
+        axios.post(`http://localhost:3000/users/${this.props.user.id}/interviews`, {
             interview: {
                 company_name: company_name,
                 interview_date: interview_date,
@@ -43,7 +43,7 @@ class Interviews extends Component{
     }
 
     handleDelete = (id, index) => {
-        axios.delete(`http://localhost:3001/users/${this.props.user.id}/interviews/${id}`)
+        axios.delete(`http://localhost:3000/users/${this.props.user.id}/interviews/${id}`)
             .then(response => response)
             .then(data => {
                 console.log(data)
