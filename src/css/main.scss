@@ -234,6 +234,9 @@ header {
 /*=========================*/
 .interview-container {
     border: 6px solid $purple;
+    .interview-table {
+        background-color: $light-gray;
+    }
 }
 
 /*=========================*/

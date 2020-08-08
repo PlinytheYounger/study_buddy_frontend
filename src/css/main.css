@@ -167,6 +167,8 @@ header {
 /*=========================*/
 .interview-container {
   border: 6px solid #8860D0; }
+  .interview-container .interview-table {
+    background-color: #f3f3f3ff; }
 
 /*=========================*/
 /* STUDY GUIDE COMPONENT STYLING

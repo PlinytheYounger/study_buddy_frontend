@@ -23,13 +23,13 @@ export default class Login extends Component {
             username
         } = this.state;
 
-        axios.post("http://localhost:3001/sessions", {
+        axios.post("http://localhost:3000/sessions", {
             user: {
                 username: username,
                 password: password
             }
         }).then(response => {
-            const user = JSON.parse(response.data.user)
+            const user = JSON.parse(response.data.user);
             if (response.data.logged_in) {
                 this.props.handleSuccessfulAuth(user);
             }

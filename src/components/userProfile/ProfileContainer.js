@@ -8,7 +8,6 @@ import ConceptCards from './ConceptCards';
 
 
 class Profile extends Component {
-
     render() {
         return(
             <div className="profile-container">
