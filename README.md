@@ -38,7 +38,7 @@ In the future, I would like to make a community forum aspect, where you can conn
 ### Profile Page
 ![Profile Page](./src/images/Wireframe_ProfilePage.png)
 
-### Data Tables Wireframe
+### ERD
 ![Data Tables](./src/images/DataTables.png)
 
 ## Future Improvements
@@ -49,37 +49,4 @@ In the future, I would like to make a community forum aspect, where you can conn
 - Further use of job profiles - linked to certain skills & highlighting specific concept areas over others. 
 - Create a community function; users are able to connect, schedule mock interviews together and track their progress via their concept tracker in tandem with feedback from their mock interviewers. Peer to peer.
 
-
-## Project Schedule
-
-| Date | Deliverable | Status |
-| ---- | ----------- | ------ |
-| 7/18 | Project Description, timeline, user stories & MVP compiled | Complete |
-| 7/20 | Wireframes & flowchart complete; project approved | Complete |
-| 7/21 | Git repo for backend set up; core rails server complete & models scaffolded | Complete |
-| 7/22 | React Framework created; git repo for front end created | Complete |
-| 7/23 | Create base React Components & setup | Complete |
-| 7/23 | Continue work on base React Components & setup | Complete |
-| 7/24 | Seed some data into rails API & integrate back end & front end | Complete |
-| 7/25 | User authentication & Login | Complete |
-| 7/26 | User authentication & Login | Complete |
-| 7/27 | User authentication & Login | Complete |
-| 7/28 | User authentication & Login | Complete |
-| 7/29 | Create Header & Footer Components & import bootstrap; read bootstrap documentation | Complete |
-| 7/30 | Start Bootstrap styling | Complete |
-| 7/31 | Continue Bootstrap styling | Complete |
-| 8/1 | Setup Profile component; interview component & concepts component | Complete |
-| 8/2 | Create Interview functionality | Complete |
-| 8/3 | Concept Update functionality | In Progress |
-| 8/4 | Concept Update functionality | In Progress |
-| 8/5 | Concept Update functionality | In Progress |
-| 8/6 | Concept Update functionality | In Progress - delayed |
-| 8/7 | Concept Update functionality; finish more styling; update README.md; deploy to Netlify | In Progress |
-| 8/7 | Present Current Status | In Progress |
-
-## Time Tracker
-
-
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
